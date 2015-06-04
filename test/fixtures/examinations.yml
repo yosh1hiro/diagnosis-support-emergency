@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  disease_id: 1
+  name: MyString
+  type: 1
+  lr_plus: 1.5
+  lr_minus: 1.5
+
+two:
+  disease_id: 1
+  name: MyString
+  type: 1
+  lr_plus: 1.5
+  lr_minus: 1.5

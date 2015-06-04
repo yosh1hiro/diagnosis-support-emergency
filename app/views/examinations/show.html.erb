@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Disease:</strong>
+  <%= @examination.disease_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @examination.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @examination.type %>
+</p>
+
+<p>
+  <strong>Lr plus:</strong>
+  <%= @examination.lr_plus %>
+</p>
+
+<p>
+  <strong>Lr minus:</strong>
+  <%= @examination.lr_minus %>
+</p>
+
+<%= link_to 'Edit', edit_examination_path(@examination) %> |
+<%= link_to 'Back', examinations_path %>
