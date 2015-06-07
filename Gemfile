@@ -73,3 +73,7 @@ group :test do
   gem 'capybara'               # ブラウザでの操作をシミュレートしてテストができる
 end
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
