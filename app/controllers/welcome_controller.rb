@@ -9,6 +9,6 @@ class WelcomeController < ApplicationController
   private
     
     def search_params
-      params.require(:q).permit(:name_cont, :name_complaint) if params[:q]
+      params.require(:q).permit(:name_cont) if params[:q]
     end
 end
