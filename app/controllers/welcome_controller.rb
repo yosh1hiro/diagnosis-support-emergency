@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   PER = 10
   def index
-    @q = Diesease..page(params[:page]).per(PER).order(:pre_pabability).search(search_params)
+    @q = Disease.page(params[:page]).per(PER).order(:pre_probability).search(search_params)
 
     @diseases = @q.result(distinct: true)
   end
@@ -9,6 +9,6 @@ class WelcomeController < ApplicationController
   private
     
     def search_params
-      params.require(:q).permit(:name_cont, :name_complaint)
+      params.require(:q).permit(:name_cont, :name_complaint) if params[:q]
     end
 end
