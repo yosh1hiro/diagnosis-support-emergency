@@ -1,13 +1,15 @@
 class CreateExaminations < ActiveRecord::Migration
   def change
     create_table :examinations do |t|
-      t.integer :disease_id
-      t.string :name
-      t.integer :type
-      t.float :lr_plus
-      t.float :lr_minus
+      t.integer :disease_id, null: false
+      t.string :name, null: false
+      t.integer :type, null: false
+      t.float :lr_plus, null: false
+      t.float :lr_minus, null: false
 
       t.timestamps null: false
     end
+    add_index :examinations, :disease_id
+    add_index :examinations, :type
   end
 end
