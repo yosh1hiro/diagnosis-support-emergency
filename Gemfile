@@ -12,8 +12,10 @@ gem 'jquery-rails'             # jQueryが使える
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer' # javascript runtime。lessをコンパイルするために必要
 gem 'less-rails' # Railsでlessを使えるようにする。Bootstrapがlessで書かれているため
+gem 'kaminari'
+gem 'kaminari-bootstrap'
 
-
+gem 'ransack'
 
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
