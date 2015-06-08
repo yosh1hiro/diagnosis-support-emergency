@@ -1,6 +1,6 @@
 class Disease < ActiveRecord::Base
   has_many :examinations, dependent: :destroy
-  accepts_nested_attributes_for :examinations, allow_destroy: true
+  accepts_nested_attributes_for :examinations, allow_destroy: true, reject_if: :all_blank
 
   validates :name, presence: true
   validates :cheif_complaint, presence: true
