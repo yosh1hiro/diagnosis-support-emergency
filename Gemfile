@@ -8,7 +8,6 @@ gem 'rails', '4.2.1'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript asset
 gem 'bootstrap-sass'
-gem 'jquery-rails'             # jQueryが使える
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer' # javascript runtime。lessをコンパイルするために必要
 gem 'less-rails' # Railsでlessを使えるようにする。Bootstrapがlessで書かれているため
@@ -25,6 +24,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
