@@ -11,19 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
+  <div class="form_group">
     <%= f.label :cheif_complaint %><br>
-    <%= f.text_field :cheif_complaint %>
+    <%= f.number_field :cheif_complaint %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :pre_probability %><br>
-    <%= f.text_field :pre_probability %>
+    <%= f.number_field :pre_probability %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.label :examinations, "検査" %>
+    <%= f.fields_for :examinations do |examinations_form| %>
+      <%= examinations_form.label :name, "検査名" %><br>
+      <%= examinations_form.text_field :name %>
+      <%= examinations_form.label :type, "検査カテゴリー" %><br>
+      <%= examinations_form.number_field :type %>
+      <%= examinations_form.label :lr_plus, "陽性尤度比" %><br>
+      <%= examinations_form.number_field :lr_plus %>
+      <%= examinations_form.label :lr_minus, "陰性尤度比" %><br>
+      <%= examinations_form.number_field :lr_minus %>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "疾患登録", class: "btn btn-default" %>
   </div>
 <% end %>
