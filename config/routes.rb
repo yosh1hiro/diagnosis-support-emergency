@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  resources :examinations
-  resources :diseases
+  resources :diseases do
+    resources :examinations
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
