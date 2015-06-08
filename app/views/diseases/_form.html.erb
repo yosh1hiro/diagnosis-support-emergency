@@ -25,21 +25,10 @@
   </div>
   <div class="form-group">
     <%= f.label :examinations, "検査" %><br>
-    <%= f.fields_for :examinations do |examinations_form| %>
-      <%= examinations_form.label :name, "検査名" %>
-      <%= examinations_form.text_field :name %><br>
-      <%= examinations_form.label :category, "検査カテゴリー" %>
-      <%= examinations_form.number_field :category %><br>
-      <%= examinations_form.label :lr_plus, "陽性尤度比" %>
-      <%= examinations_form.number_field :lr_plus %><br>
-      <%= examinations_form.label :lr_minus, "陰性尤度比" %>
-      <%= examinations_form.number_field :lr_minus %><br>
-      <!-- DBに保存されていない場合のみ表示 = 更新時のみ表示 -->
-      <% if @disease.persisted? %>
-        <%= examinations_form.check_box :_destroy %>
-        <%= examinations_form.label :_destroy, "削除" %><br>
-      <% end %>
+    <%= f.fields_for :examinations do |builder| %>
+      <%= render "examination_fields", f: builder %>
     <% end %>
+    <%= link_to_add_fields "検査項目追加", f, :examinations  %>
   </div>
   <div class="form-group">
     <%= f.submit "疾患登録", class: "btn btn-default" %>

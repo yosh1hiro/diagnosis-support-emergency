@@ -1,0 +1,12 @@
+<fieldset>
+  <%= f.label :name, "検査名" %>
+  <%= f.text_field :name %><br>
+  <%= f.label :category, "検査カテゴリー" %>
+  <%= f.number_field :category %><br>
+  <%= f.label :lr_plus, "陽性尤度比" %>
+  <%= f.number_field :lr_plus %><br>
+  <%= f.label :lr_minus, "陰性尤度比" %>
+  <%= f.number_field :lr_minus %><br>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "削除", '#', class: "remove_fields" %>
+</fieldset>
