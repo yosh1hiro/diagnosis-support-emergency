@@ -69,6 +69,6 @@ class ExaminationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def examination_params
-      params.require(:examination).permit(:disease_id, :name, :type, :lr_plus, :lr_minus)
+      params.require(:examination).permit(:disease_id, :name, :category, :lr_plus, :lr_minus)
     end
 end

@@ -15,6 +15,7 @@ class DiseasesController < ApplicationController
   # GET /diseases/new
   def new
     @disease = Disease.new
+    @disease.examinations.build
   end
 
   # GET /diseases/1/edit
@@ -69,6 +70,7 @@ class DiseasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def disease_params
-      params.require(:disease).permit(:name, :cheif_complaint, :pre_probability)
+      params.require(:disease).permit(:name, :cheif_complaint, :pre_probability,
+                                      examinations_attributes: [:name, :category, :lr_plus, :lr_minus])
     end
 end
