@@ -1,0 +1,23 @@
+<div class="page-header">
+  <h1>疾患一覧</h1>
+</div>
+<%= search_form_for(@q, url: root_path, class: 'well') do |f| %>
+  <div class="form-group">
+    <%= f.label :name_cont, '疾患名' %>
+    <%= f.text_field :name_cont, class: 'form-control' %>
+  </div>
+  <%= f.submit '検索', class: 'btn btn-default' %>
+<% end %>
+<div class="list-group">
+  <% @diseases.each do |disease| %>
+    <%= link_to(disease, class: 'list-group-item') do %>
+      <h4 class="list-group-item-heading">
+        <%= disease.name %>
+      </h4>
+      <p class="list-group-item-text">
+        <%= disease.cheif_complaint %>
+      </p>
+    <% end %>
+  <% end %>
+  <%= paginate @diseases %>
+</div>
