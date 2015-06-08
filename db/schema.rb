@@ -27,14 +27,14 @@ ActiveRecord::Schema.define(version: 20150604173818) do
   create_table "examinations", force: :cascade do |t|
     t.integer  "disease_id", null: false
     t.string   "name",       null: false
-    t.integer  "type",       null: false
+    t.integer  "category",   null: false
     t.float    "lr_plus",    null: false
     t.float    "lr_minus",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_index "examinations", ["category"], name: "index_examinations_on_category"
   add_index "examinations", ["disease_id"], name: "index_examinations_on_disease_id"
-  add_index "examinations", ["type"], name: "index_examinations_on_type"
 
 end
