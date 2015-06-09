@@ -1,19 +1,64 @@
 <p id="notice"><%= notice %></p>
+<div class="page-header">
+  <h1>
+    <%= @disease.name %>
+  </h1>
+</div>
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        主訴
+      </div>
+      <div class="panel-body">
+        <%= @disease.cheif_complaint %>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        検査前確率
+      </div>
+      <div class="panel-body">
+        <%= @disease.pre_probability %>
+      </div>
+    </div>
+    <% @examinations.each do |exam| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <p>検査内容: <%= exam.name %></p>
+          <p>検査カテゴリー: <%= exam.category %></p>
+        </div>
+        <div class="panel-body">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>LR+</th>
+                <th>LR-</th>
+                <th>検査番号</th>
+                <th>備考</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><%= exam.lr_plus %></td>
+                <td><%= exam.lr_minus %></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      <% end %>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+      </div>
+      <div class="panel-body">
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @disease.name %>
-</p>
-
-<p>
-  <strong>Cheif complaint:</strong>
-  <%= @disease.cheif_complaint %>
-</p>
-
-<p>
-  <strong>Pre probability:</strong>
-  <%= @disease.pre_probability %>
-</p>
 
 <%= link_to 'Edit', edit_disease_path(@disease) %> |
 <%= link_to 'Back', diseases_path %>
