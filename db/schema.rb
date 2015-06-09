@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20150604173818) do
     t.float    "lr_plus",               null: false
     t.float    "lr_minus",              null: false
     t.integer  "number_of_examination", null: false
-    t.string   "memo",                  null: false
+    t.string   "memo"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
   end

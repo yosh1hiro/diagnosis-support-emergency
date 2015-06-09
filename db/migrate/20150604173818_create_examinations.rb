@@ -7,7 +7,7 @@ class CreateExaminations < ActiveRecord::Migration
       t.float :lr_plus, null: false
       t.float :lr_minus, null: false
       t.integer :number_of_examination, null: false
-      t.string :memo, null: false
+      t.string :memo
 
       t.timestamps null: false
     end

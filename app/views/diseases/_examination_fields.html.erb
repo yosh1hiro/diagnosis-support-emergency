@@ -4,9 +4,9 @@
   <%= f.label :category, "検査カテゴリー" %>
   <%= f.number_field :category %><br>
   <%= f.label :lr_plus, "陽性尤度比" %>
-  <%= f.number_field :lr_plus %><br>
+  <%= f.number_field :lr_plus, :class => 'text_field', :step => 'any' %><br>
   <%= f.label :lr_minus, "陰性尤度比" %>
-  <%= f.number_field :lr_minus %><br>
+  <%= f.number_field :lr_minus, :class => 'text_field', :step => 'any' %><br>
   <%= f.label :number_of_examination, "検査番号" %>
   <%= f.number_field :number_of_examination %><br>
   <%= f.label :memo, "メモ" %>
