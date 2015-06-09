@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'diagnosis', to: 'diagnoses#index'
+
   root 'welcome#index'
 
   resources :diseases do
