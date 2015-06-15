@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150604173818) do
   create_table "examinations", force: :cascade do |t|
     t.integer  "disease_id",            null: false
     t.string   "name",                  null: false
-    t.integer  "category",              null: false
+    t.integer  "category"
     t.float    "lr_plus",               null: false
     t.float    "lr_minus",              null: false
     t.integer  "number_of_examination", null: false
