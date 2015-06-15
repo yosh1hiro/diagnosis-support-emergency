@@ -21,7 +21,7 @@
   </div>
   <div class="form-group">
     <%= f.label :pre_probabilityi, "検査前確率" %><br>
-    <%= f.number_field :pre_probability %>
+    <%= f.number_field :pre_probability, :class => 'text_field', :step => 'any' %>
   </div>
   <div class="form-group">
     <%= f.label :examinations, "検査" %><br>

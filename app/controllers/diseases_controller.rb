@@ -10,6 +10,8 @@ class DiseasesController < ApplicationController
   # GET /diseases/1
   # GET /diseases/1.json
   def show
+    @disease = Disease.find(params[:id])
+    @examinations = @disease.examinations
   end
 
   # GET /diseases/new
@@ -71,6 +73,6 @@ class DiseasesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def disease_params
       params.require(:disease).permit(:name, :cheif_complaint, :pre_probability,
-                                      examinations_attributes: [:name, :category, :lr_plus, :lr_minus, :_destroy])
+                                      examinations_attributes: [:name, :category, :lr_plus, :lr_minus, :number_of_examination, :memo, :_destroy])
     end
 end
