@@ -10,7 +10,7 @@
       </div>
       <div class="panel-body">
         選択してください<br>
-        something
+        <%= render 'cheif_complaint' %>
       </div>
     </div>
     <div class="panel panel-default">
@@ -19,7 +19,7 @@
       </div>
       <div class="panel-body">
         選択してください<br>
-        something
+        <%= render 'diseases' %>
       </div>
     </div>
     <div class="panel panel-default">
@@ -28,39 +28,11 @@
       </div>
       <div class="panel-body">
         検査のチェックリスト
+        <%= render 'examinations' %>
       </div>
     </div>
   </div>
   <div class="col-md-8">
-    <div class="panel panel-default">
-        主訴: ???
-        病気: ???
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>検査名</th>
-          <th>検査カテゴリー</th>
-          <th>陽性尤度比</th>
-          <th>陰性尤度比</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>1分間圧迫</td>
-          <td>身体所見</td>
-          <td>20%</td>
-          <td>0.2</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+    <%= render 'results' %>
   </div>
 </div>
