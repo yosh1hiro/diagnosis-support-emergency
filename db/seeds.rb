@@ -76,3 +76,44 @@ Examination.create({
   number_of_examination: 6
 })
 
+disease2 = Disease.create({
+  name: "心原性失神",
+  cheif_complaint: 2,
+  pre_probability: 9.5
+})
+
+Examination.create({
+  disease_id: disease2.id,
+  name: "心疾患の既往",
+  lr_plus: 1.7,
+  lr_minus: 0.1,
+  number_of_examination: 1
+})
+Examination.create({
+  disease_id: disease2.id,
+  name: "2回以下のエピソード",
+  lr_plus: 2.2,
+  lr_minus: 0.5,
+  number_of_examination: 2
+})
+Examination.create({
+  disease_id: disease2.id,
+  name: "ミオローヌス運動",
+  lr_plus: 6,
+  lr_minus: 0.8,
+  number_of_examination: 3
+})
+Examination.create({
+  disease_id: disease2.id,
+  name: "労作時発症",
+  lr_plus: 15,
+  lr_minus: 0.9,
+  number_of_examination: 4
+})
+Examination.create({
+  disease_id: disease2.id,
+  name: "臥位での発症",
+  lr_plus: 7,
+  lr_minus: 0.9,
+  number_of_examination: 5
+})
