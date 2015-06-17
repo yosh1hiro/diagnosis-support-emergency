@@ -1,17 +1,31 @@
-<% @examinations.each.with_index do |ex, i| %>
-<div class="form-group">
-  <h4 class="control-label">検査項目名: <b><%= ex.name %></b></h4>
-  <p>検査番号: <%= ex.number_of_examination %></p> 
-    <form>
-      <div class="radio-inline">
-        <label><input type="radio" name="<%= "LR#{i + 1}" %>" id="<%= "LR+#{i + 1}" %>" value="<%= ex.lr_plus %>">LR+</label>
-      </div>
-      <div class="radio-inline">
-        <label><input type="radio" name="<%= "LR#{i + 1}" %>" id="<%= "LR+#{i + 1}" %>" value="<%= ex.lr_minus %>" checked>LR-</label>
-      </div>
-    </form>
-  <% unless ex.memo.blank? %>
-    <%= ex.memo %>
+<div class="panel panel-default">
+  <h4>疾患: <%= @d.name %></h4>
+<table class="table table-striped">
+<% @examinations.each_with_index do |ex, i| %>
+    <thead>
+      <tr>
+        <th>検査番号</th>
+        <th>検査名</th>
+        <th>検査(陽性)</th>
+        <th>検査(陰性)</th>
+        <th>陽性尤度比</th>
+        <th>陰性尤度比</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= ex.number_of_examination %></td>
+        <td><%= ex.name %></td>
+        <td>
+          <input type="radio" name="<%= "LR#{i + 1}" %>" id="<%= "LR+#{i + 1}" %>" value="<%= ex.lr_plus %>">
+        </td>
+        <td>
+          <input type="radio" name="<%= "LR#{i + 1}" %>" id="<%= "LR+#{i + 1}" %>" value="<%= ex.lr_minus %>" checked>
+        </td>
+        <td><%= ex.lr_plus %></td>
+        <td><%= ex.lr_minus %></td>
+      </tr>
+    </tbody>
   <% end %>
+</table>
 </div>
-<% end %>

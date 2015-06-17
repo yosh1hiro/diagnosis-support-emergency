@@ -1,25 +1,5 @@
 <div class="panel panel-default">
-  <h4>疾患: <%= @d.name %></h4>
-  
-<table class="table table-striped">
-  <% @examinations.each do |ex| %>
-    <thead>
-      <tr>
-        <th>検査番号</th>
-        <th>検査名</th>
-        <th>陽性尤度比</th>
-        <th>陰性尤度比</th>
-        <th>メモ</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= ex.number_of_examination %></td>
-        <td><%= ex.name %></td>
-        <td><%= ex.lr_plus %></td>
-        <td><%= ex.lr_minus %></td>
-        <td><%= ex.memo %></td>
-      </tr>
-    </tbody>
-  <% end %>
-</table>
+  <h4>疾患: <%= @d.name %>の可能性</h4>
+  <h5>検査結果</h5>
+  <h5><%= @odds %>%です</h5>
+</div>
