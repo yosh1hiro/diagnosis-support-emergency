@@ -1,5 +1,5 @@
 <div class="panel panel-default">
-  <h4>疾患: <%= @d.name %></h4>
+  <h4>疾患: <%= @d.name %> | 事前確率:<span id="pre"><%= @d.pre_probability  %></span>%</h4>
 <table class="table table-striped">
 <% @examinations.each_with_index do |ex, i| %>
     <thead>
@@ -17,10 +17,10 @@
         <td><%= ex.number_of_examination %></td>
         <td><%= ex.name %></td>
         <td>
-          <input type="radio" name="<%= "LR#{i + 1}" %>" id="<%= "LR+#{i + 1}" %>" value="<%= ex.lr_plus %>">
+          <input type="radio" name="<%= "lr#{i}" %>" id="lr" value="<%= ex.lr_plus %>">
         </td>
         <td>
-          <input type="radio" name="<%= "LR#{i + 1}" %>" id="<%= "LR+#{i + 1}" %>" value="<%= ex.lr_minus %>" checked>
+          <input type="radio" name="<%= "lr#{i}" %>" id="lr" value="<%= ex.lr_minus %>" checked>
         </td>
         <td><%= ex.lr_plus %></td>
         <td><%= ex.lr_minus %></td>
