@@ -31,19 +31,19 @@ $(document).on 'ready page:load', ->
       a1 = $(this).val()
       b = $(this).attr("name").match(/\d+/)
       a2 = b[0]
+      cal2 = 0
       h = "#{a2}": Number(a1)
       for key, value of h
         p[key] = value
-      console.log(p)
       
-  cal = (arr) ->
-    cal2 = 1
-    i = 0
-    len = arr.length
-    while i < len
-      cal2 *= arr[i]
-      ++i
-    return cal2
-  
+      cal2 = 1
+      i = 0
+      len = p.length
+      while i < len
+        cal2 *= p[i]
+        ++i
+      console.log cal2
+      return cal2
+  c()
 
 #  z2 = (value, name)
