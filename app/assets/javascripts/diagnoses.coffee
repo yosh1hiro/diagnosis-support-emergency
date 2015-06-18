@@ -21,6 +21,8 @@ $(document).on 'ready page:load', ->
       p.push Number($(this).val()))
     return p
 
+  pre = $('#pre').text()
+  console.log(pre)
 
   c = ->
     p = []
