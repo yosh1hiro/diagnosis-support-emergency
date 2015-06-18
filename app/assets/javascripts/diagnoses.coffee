@@ -21,13 +21,22 @@ $(document).on 'ready page:load', ->
       p.push Number($(this).val()))
     return p
 
-  pre = $('#pre').text()
+  pre = $('#pre').text() / 100
+  pre = pre / (1 - pre)
   console.log(pre)
 
   c = ->
     p = []
-    result = $('input[name^="lr"]:checked').map (->
-      p.push Number($(this).val()))
+    result = $('input[name^="lr"]:checked').map ->
+      p.push Number($(this).val())
+      cal3 = 1
+      i = 0
+      len = p.length
+      while i < len
+        cal3 *= p[i]
+        ++i
+      console.log cal3
+      
 
     $('input[name^="lr"]:radio').change ->
       a1 = $(this).val()
@@ -44,7 +53,11 @@ $(document).on 'ready page:load', ->
       while i < len
         cal2 *= p[i]
         ++i
+      cal2 *= pre
+      cal2 = cal2 / (cal2 + 1) * 100
+      $('span[id="result"]').text(cal2)
       console.log cal2
+
       return cal2
   c()
 
