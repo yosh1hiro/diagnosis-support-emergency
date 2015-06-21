@@ -16,6 +16,8 @@ gem 'kaminari-bootstrap'
 
 gem 'ransack'
 
+gem 'enum_help' #  Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
+
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
