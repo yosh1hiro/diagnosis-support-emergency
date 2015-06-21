@@ -8,7 +8,7 @@
 
 disease = Disease.create({
   name: "虫垂炎",
-  cheif_complaint: 1,
+  cheif_complaint: 0,
   pre_probability: 17
 })
 
@@ -78,7 +78,7 @@ Examination.create({
 
 disease2 = Disease.create({
   name: "心原性失神",
-  cheif_complaint: 2,
+  cheif_complaint: 1,
   pre_probability: 9.5
 })
 
