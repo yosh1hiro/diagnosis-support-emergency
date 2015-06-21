@@ -1,5 +1,7 @@
-<% @c2.each do |key, value| %>
-  <button type="button" value="<%= value %>" id="c3">
-    <%= key  %>
-  </button>
+<%= form_tag({ action: 'show_diseases' }, remote: true) do %>
+
+  <%= select_tag(:cheif_complaint, options_for_select(@cheif_complaints)) %>
+  <%= submit_tag '検索' %>
 <% end %>
+
+

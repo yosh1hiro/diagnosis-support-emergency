@@ -6,6 +6,16 @@ class DiagnosesController < ApplicationController
     examinations = Examination.where("disease_id = ?", @d.id)
     @examinations = examinations.find_by_sql(['SELECT * FROM examinations WHERE id IN(SELECT min(id) FROM examinations GROUP BY number_of_examination)'])
     @odds = 0
+    @cheif_complaints = Disease.cheif_complaints  # 主訴を抽出
+    
+  end
+
+  def show_diseases
+    @diseases = Disease.where(cheif_complaint: params[:cheif_complaint])
+  end
+
+  def show_examinations
+
   end
 
   private
