@@ -16,6 +16,8 @@ gem 'kaminari-bootstrap'
 
 gem 'ransack'
 
+gem 'enum_help' #  Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
+
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
@@ -59,7 +61,7 @@ group :development, :test do
    gem 'better_errors'          # エラー画面を見やすくする
    gem 'binding_of_caller'      # better_errorsのエラー画面でREPLが使える
    gem 'tapp'                   # プリントデバッグがしやすくなる
-   gem 'pry-rails'              # railsでpryが使える
+   gem 'pry-rails'           # railsでpryが使える
    gem 'pry-byebug'             # pryでデバックコマンドが使える
    gem 'awesome_print'          # プリントデバッグの出力を整形
    gem 'hirb'                   # SQLの結果を見やすく整形してくれる

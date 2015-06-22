@@ -1,0 +1,87 @@
+<div class="col-md-8">
+  <div class="panel panel-default">
+      <h4>疾患: <%= @disease.name %> | 事前確率:<span id="pre"><%= @disease.pre_probability  %></span>%</h4>
+    <table class="table table-striped">
+    <% @examinations.each_with_index do |ex, i| %>
+        <thead>
+          <tr>
+            <th>検査番号</th>
+            <th>検査名</th>
+            <th>検査(陽性)</th>
+            <th>検査(陰性)</th>
+            <th>陽性尤度比</th>
+            <th>陰性尤度比</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= ex.number_of_examination %></td>
+            <td><%= ex.name %></td>
+            <td>
+              <input type="radio" name="<%= "lr#{i}" %>" id="lr" value="<%= ex.lr_plus %>">
+            </td>
+            <td>
+              <input type="radio" name="<%= "lr#{i}" %>" id="lr" value="<%= ex.lr_minus %>" checked>
+            </td>
+            <td><%= ex.lr_plus %></td>
+            <td><%= ex.lr_minus %></td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
+  <div class="panel panel-default">
+    <h4>疾患: <%= @disease.name %>の可能性</h4>
+    <h5>検査結果</h5>
+    <h5><span id="result"><%= @odds %></span>%です</h5>
+  </div>
+</div>
+<%= javascript_tag do %>
+  $(document).ready(function() {
+    var p, pre, result;
+    pre = $("#pre").text() / 100;
+    pre = pre / (1 - pre);
+    console.log(pre);
+    p = [];
+    result = $("input[type='radio']:checked").map(function() {
+      var cal3, i, len;
+      p.push(Number($(this).val()));
+      cal3 = 1;
+      i = 0;
+      len = p.length;
+      while (i < len) {
+        cal3 *= p[i];
+        ++i;
+      }
+      return console.log("aaaa");
+    });
+    return $("input[type='radio']:radio").change(function() {
+      var a1, a2, b, cal2, h, i, key, len, obj, value;
+      a1 = $(this).val();
+      b = $(this).attr("name").match(/\d+/);
+      a2 = b[0];
+      cal2 = 0;
+      h = (
+        obj = {},
+        obj["" + a2] = Number(a1),
+        obj
+      );
+      for (key in h) {
+        value = h[key];
+        p[key] = value;
+      }
+      cal2 = 1;
+      i = 0;
+      len = p.length;
+      while (i < len) {
+        cal2 *= p[i];
+        ++i;
+      }
+      cal2 *= pre;
+      cal2 = cal2 / (cal2 + 1) * 100;
+      $('span[id="result"]').text(cal2);
+      console.log(cal2);
+      return cal2;
+  });
+});
+<% end %>

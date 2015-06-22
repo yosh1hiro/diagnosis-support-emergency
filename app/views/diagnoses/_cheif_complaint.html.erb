@@ -1,0 +1,7 @@
+<%= form_tag({ action: 'show_diseases' }, remote: true) do %>
+
+  <%= select_tag(:cheif_complaint, options_for_select(@cheif_complaints)) %>
+  <%= submit_tag '検索' %>
+<% end %>
+
+
