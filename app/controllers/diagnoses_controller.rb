@@ -13,9 +13,7 @@ class DiagnosesController < ApplicationController
 
   def show_examinations
     @disease = Disease.find(params[:id])
-    e = Examination.where("disease_id = ?", @disease.id)
-    @examinations = e.all
-    a =  e.find_by_sql(['SELECT * FROM examinations WHERE id IN(SELECT min(id) FROM examinations GROUP BY number_of_examination)'])
+    @examinations = Examination.find_by_sql(["select MAX(lr_plus) id, lr_plus, name, lr_minus, disease_id, number_of_examination from examinations where disease_id = :disease_id group by number_of_examination", {disease_id: @disease.id}])
   end
 
   private
