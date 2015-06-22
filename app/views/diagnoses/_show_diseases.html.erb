@@ -1,3 +1,4 @@
-<% @diseases.each do |disease| %>
-  <p><%= disease.name %></p>
+<%= form_tag({ action: 'show_examinations'}, remote: true) do %>
+  <%= select_tag(:id, options_for_select(@diseases.map { |disease| [disease.name, disease.id]})) %>
+  <%= submit_tag '診察' %>
 <% end %>

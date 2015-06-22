@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
 #  get 'ajax_diagnosis', to: :search_disease
   post 'ajax_diagnosis/diseases', to: 'diagnoses#show_diseases'
-#  get 'ajax_diagnosis/examinations', to: :show_examinations
+  post 'ajax_diagnosis/examinations', to: 'diagnoses#show_examinations'
 
   resources :diseases do
     resources :examinations
