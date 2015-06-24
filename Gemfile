@@ -14,6 +14,8 @@ gem 'less-rails' # Railsでlessを使えるようにする。Bootstrapがlessで
 gem 'kaminari'
 gem 'kaminari-bootstrap'
 
+gem 'mysql2'
+
 gem 'ransack'
 
 gem 'enum_help' #  Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
@@ -77,6 +79,5 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end

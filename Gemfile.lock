@@ -167,6 +167,7 @@ GEM
     mini_portile (0.6.2)
     minitest (5.7.0)
     multi_json (1.11.0)
+    mysql2 (0.3.18)
     nenv (0.2.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -176,7 +177,6 @@ GEM
     notiffany (0.0.6)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    pg (0.18.2)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
     pry (0.10.1)
@@ -354,7 +354,7 @@ DEPENDENCIES
   kaminari
   kaminari-bootstrap
   less-rails
-  pg
+  mysql2
   pry-byebug
   pry-rails
   quiet_assets
