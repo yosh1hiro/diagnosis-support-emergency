@@ -60,14 +60,14 @@ group :development, :test do
   gem 'quiet_assets'           # アセットログの抑制
 
 # debug
-   gem 'better_errors'          # エラー画面を見やすくする
-   gem 'binding_of_caller'      # better_errorsのエラー画面でREPLが使える
-   gem 'tapp'                   # プリントデバッグがしやすくなる
-   gem 'pry-rails'           # railsでpryが使える
-   gem 'pry-byebug'             # pryでデバックコマンドが使える
-   gem 'awesome_print'          # プリントデバッグの出力を整形
-   gem 'hirb'                   # SQLの結果を見やすく整形してくれる
-   gem 'hirb-unicode'           # hirbの日本語対応
+  gem 'better_errors'          # エラー画面を見やすくする
+  gem 'binding_of_caller'      # better_errorsのエラー画面でREPLが使える
+  gem 'tapp'                   # プリントデバッグがしやすくなる
+  gem 'pry-rails'           # railsでpryが使える
+  gem 'pry-byebug'             # pryでデバックコマンドが使える
+  gem 'awesome_print'          # プリントデバッグの出力を整形
+  gem 'hirb'                   # SQLの結果を見やすく整形してくれる
+  gem 'hirb-unicode'           # hirbの日本語対応
 end
 
 group :test do

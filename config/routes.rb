@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'diagnosis', to: 'diagnoses#index'
+  root 'diagnoses#index'
 
-  root 'welcome#index'
+
+  get 'search', to: 'welcome#index'
 
 #  get 'ajax_diagnosis', to: :search_disease
   post 'ajax_diagnosis/diseases', to: 'diagnoses#show_diseases'
