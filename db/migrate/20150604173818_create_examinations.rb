@@ -12,6 +12,5 @@ class CreateExaminations < ActiveRecord::Migration
       t.timestamps null: false
     end
     add_index :examinations, :disease_id
-    add_index :examinations, :category
   end
 end

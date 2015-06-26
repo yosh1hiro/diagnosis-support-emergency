@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20150604173818) do
     t.datetime "updated_at",            null: false
   end
 
-  add_index "examinations", ["category"], name: "index_examinations_on_category"
   add_index "examinations", ["disease_id"], name: "index_examinations_on_disease_id"
 
 end

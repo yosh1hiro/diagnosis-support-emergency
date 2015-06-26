@@ -7,8 +7,8 @@ class Disease < ActiveRecord::Base
   validates :pre_probability, presence: true
 
   # setting cheif_complaint
-  # stomachache -> 腹痛, faint -> 失神
-  enum cheif_complaint: [ :stomachache, :faint ]
+  # stomachache -> 腹痛, faint -> 失神, dizziness -> めまい, pneumonia -> 肺炎, headache -> 頭痛, difficulty_in_breathing -> 呼吸困難, Convulsion -> 痙攣, edema -> 浮腫, chest_pain -> 胸痛
+  enum cheif_complaint: [:stomachache, :faint, :dizziness, :pneumonia, :headache, :difficulty_in_breathing, :convulsion, :edema, :chest_pain]
   def self.restricted_statuses
     statuses.except :failed, :destroyed
   end
